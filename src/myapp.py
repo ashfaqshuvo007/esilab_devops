@@ -1,9 +1,16 @@
 from  flask import Flask
 
+app = Flask(__name__)
+
+
 @app.route("/")
 def index():
     return "Helloworld"
 
 
-# def index():
-#     return "Helloworld"
+@app.route("/ping")
+def pong():
+    return "pong!"
+
+if __name__ == "__main__":
+    app.run(debug=True)
